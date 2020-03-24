@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Detail</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div>
+			<h2 class="text-center">User Detail Page</h2>
+		</div>
+		<a href="/home" class="btn btn-outline-primary float-right mr-3 mb-3" >Home</a> 
+		<a href="/home/view_users" class="btn btn-outline-primary float-right mr-3 mb-3" >View users</a> 
+		<a href="/home/view_property" class="btn btn-outline-primary float-right mr-3 mb-3" >View Properties</a> 
+		<a href="/home/view_message" class="btn btn-outline-primary float-right mr-3 mb-3" >View Message</a> 
+		<a href="/logout" class="btn btn-outline-primary float-right mr-3 mb-3" >Logout</a><br>
+		<hr>
+		<table class="table table-striped table-bordered table-hover text-center">
+			<tr scope="row">
+				<td>Image: </td>
+				<td><%= user.c_image %></td>
+			</tr>
+			<tr scope="row">
+				<td>ID: </td>
+				<td><%= user.customer_id %></td>
+			</tr>
+			<tr scope="row">
+				<td>Username: </td>
+				<td><%= user.username %></td>
+			</tr>
+			<tr scope="row">
+				<td>Name: </td>
+				<td><%= user.name %></td>
+			</tr>
+			<tr scope="row">
+				<td>Type: </td>
+				<td><%= user.type %></td>
+			</tr>
+			<tr scope="row">
+				<td>Phone: </td>
+				<td><%= user.phone %></td>
+			</tr>
+			<tr scope="row">
+				<td>Email: </td>
+				<td><%= user.email %></td>
+			</tr>
+		
+			<tr scope="row">
+				<td>Active Posts: </td>
+				<td><a href="/home/user_active_posts/<%= user.username%>" class="btn btn-outline-info"><%= user.active_posts %></a></td>
+			</tr>
+			<tr scope="row">
+				<td>Pending Posts: </td>
+				<td><a href="/home/user_pending_posts/<%= user.username%>" class="btn btn-outline-info"><%= user.pending_posts %></a></td>
+			</tr>
+			<tr scope="row">
+				<td>Sold posts: </td>
+				<td><a href="/home/user_sold_posts/<%= user.username%>" class="btn btn-outline-info"><%= user.sold_posts %></a></td>
+			</tr>
+			<tr scope="row">
+				<td>Total posts: </td>
+				<td><a href="/home/user_total_posts/<%= user.username%>" class="btn btn-outline-info"><%= user.total_posts %></a></td>
+			</tr>
+			
+		</table>
+		<hr>
+		<h3 class="text-center">Messages</h3>
+		<table class="table table-striped table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<td scope="col">ID </td>
+					<td scope="col">From </td>
+					<td scope="col">To </td>
+					<td scope="col">Message </td>
+					<td scope="col">Date </td>
+				</tr>
+			<% for(var i=0; i < messagelist.length; i++){ %>
+				<tr>
+					<td scope="row"><%= messagelist[i].message_id %></td>
+					<td><a href="/home/user_detail/<%= messagelist[i].from %>" class="btn btn-outline-success"><%= messagelist[i].from %></a></td>
+					<td><a href="/home/user_detail/<%= messagelist[i].to %>" class="btn btn-outline-info"><%= messagelist[i].to %></a></td>
+					<td><%= messagelist[i].msg %></td>
+					<td><%= messagelist[i].msg_date.toString().split(" ").slice(0, 4).join(" ") %></td>
+				</tr>
+			</thead>
+		<%  } %>
+		</table>
+	</div>
+
+</body>
+</html>

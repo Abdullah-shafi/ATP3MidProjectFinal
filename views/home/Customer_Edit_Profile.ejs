@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Edit Profile</title>
+<link rel="stylesheet" href="./abc/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AB</span> Property </h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="Customer_Home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="current"><a href=" Customer_Profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="Customer_Feedback "><i class="fa fa-envelope"></i> Feedback</a></li>
+             <li><a href=" Customer_Upload"><i class="fa fa-upload"></i> Upload Property</a></li>
+            <li><a href="Customer_Edit "><i class="fa fa-edit"></i> Edit Property</a></li>
+            <li><a href="Customer_Delete"> <i class="fa fa-trash"></i> Delete Post</a></li>
+            <li><a href="/logout "> <i class="fa fa-sign-out"></i> LogOut</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+<body>
+
+
+<div class="Customer_Profile">
+  
+  <img src="<%= profile[0].c_image %>" alt="Avatar" class="profile">
+
+  <br>
+     <br>
+     <br>
+
+    <center>
+
+           <input type="button" class="profile_button" onclick="window.location.href = 'Customer_Edit_Profile';" value="Edit_Profile"/><br>
+         <input type="button" class="profile_button" onclick="window.location.href = 'Change_Password';" value="Change_Password"/><br>
+         
+  </center>
+
+</div>
+
+
+<div class="profile_details">
+  
+    <h1 id="logo" align="center">Edit Profile</h1><br>
+
+      <div >
+
+        <center>
+        
+         <form method="post">
+    <table>
+      <tr>
+        <td>Id</td>
+        <td><input type="text" readonly name="id" value="<%= profile[0].customer_id %>"></td>
+      </tr>
+      <tr>
+        <td>UserName</td>
+        <td><input type="text" readonly name="uname" value="<%= profile[0].username %>"></td>
+      </tr>
+      <tr>
+        <td>Name :</td>
+        <td><input type="text" name="name" value="<%= profile[0].name %>"></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" name="email" value="<%= profile[0].email %>"></td>
+      </tr>
+       <tr>
+        <td>Mobile_No:</td>
+        <td><input type="number" maxlength="11" name="phone" value="<%= profile[0].phone %>"></td>
+      </tr>
+      
+        <td></td>
+        <td><input type="submit" name="submit" value="Update"></td>
+      </tr>
+    </table>
+  </form>
+      
+         </center>
+
+      </div>
+     
+      
+
+</div>
+
+
+</body>
+</html>

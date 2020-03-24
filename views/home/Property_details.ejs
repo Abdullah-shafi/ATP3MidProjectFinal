@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Property Details</title>
+    <link rel="stylesheet" href="/./abc/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+</head>
+<body>
+
+<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AB</span> Property </h1>
+        </div>
+        <nav>
+          <ul>
+            <li class=""><a href="/home/Customer_Home"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/home/Customer_Profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href=" /home/Customer_Feedback"><i class="fa fa-envelope"></i> Feedback</a></li>
+            <li><a href="/home/Customer_Upload"><i class="fa fa-upload"></i> Upload Property</a></li>
+            <li><a href="/home/Customer_Edit "><i class="fa fa-edit"></i> Edit Property</a></li>
+            <li><a href="/home/Customer_Delete "> <i class="fa fa-trash"></i> Delete Post</a></li>
+            <li><a href="/logout "> <i class="fa fa-sign-out"></i> LogOut</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+
+
+
+
+
+
+
+<!-- Pic & Price -->
+
+
+  <center>
+<section >
+<br><br>
+<%= propertylist[0].title %>
+        <div class="w3-content w3-section" style="max-width:500px">
+            <img class="mySlides" src="/<%= propertylist[0].image %>"style="width:100%" >
+              
+        </div>
+              
+              Price: <%= propertylist[0].property_price %><br><br>
+              Area: <%= propertylist[0].property_area %><br><br>
+              Type: </i> <%= propertylist[0].p_type %><br><br> 
+              Style: <%= propertylist[0].style %><br><br>
+              Bed: </i> <%= propertylist[0].bed %><br><br> 
+              Bath: <%= propertylist[0].bath %><br><br> 
+              Sqt_feet:<%= propertylist[0].feet %> sq. ft <br><br>
+
+            Floor:<%= propertylist[0].floor %>th<br><br>
+            Description:<%= propertylist[0].description %>
+            <br><br>
+            
+          <button style="background-color:green;height: 30px;width: 120px; " id="<%= propertylist[0].phone %>">Call</button>
+              <button style="background-color:red;height: 30px;width: 120px; " id="<%= propertylist[0].email %>">Email</button>
+           
+            </div>
+            </div>    
+
+  <script>
+
+document.getElementById("<%= propertylist[0].phone %>").addEventListener("click", function() {
+  alert("<%= propertylist[0].phone %>");
+});
+document.getElementById("<%= propertylist[0].email %>").addEventListener("click", function() {
+  alert("<%= propertylist[0].email %>");
+});
+
+</script>
+  
+
+
+
+  <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+   
+                    
+</section>
+
+  </center> 
+<br>
+
+
+
+ 
+
+
+<!-- Footer-->
+
+<footer>
+      <p> Copyright &copy; 2020-2030</p>
+</footer>
+
+</body>
+</html>

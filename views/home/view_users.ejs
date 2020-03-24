@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">	
+		<div>
+			<h2 class="text-center">User List</h2> 		
+		</div>
+
+		<a href="/home" class="btn btn-outline-primary float-right mr-3 mb-3" >Home</a> 
+		<a href="/home/view_users" class="btn btn-outline-primary float-right mr-3 mb-3" >View users</a> 
+		<a href="/home/view_property" class="btn btn-outline-primary float-right mr-3 mb-3" >View Properties</a> 
+		<a href="/home/view_message" class="btn btn-outline-primary float-right mr-3 mb-3" >View Message</a> 
+		<a href="/logout" class="btn btn-outline-primary float-right mr-3 mb-3" >Logout</a><br>
+		<hr>
+		
+			<form method="post" class="form-inline">
+				<input type="text" class="form-control  mb-3 mr-3" name="username" placeholder="Username">
+				<input type="text" class="form-control  mb-3 mr-3" name="email" placeholder="Email">
+				<select class="btn btn-secondary dropdown-toggle mb-3 mr-3" name="type">
+					<option value="">Type</option>
+					<option value="admin">Admin</option>
+					<option value="moderator">Moderator</option>
+					<option value="employee">Employee</option>
+					<option value="customer">Customer</option>
+				</select>
+				<select class="btn btn-secondary dropdown-toggle mb-3 mr-3" name="orderby">
+					<option value="">Order By</option>
+					<option value="order by active_posts">Active posts low to high</option>
+					<option value="order by active_posts desc">Active posts high to low</option>
+					<option value="order by pending_posts">Pending posts low to high</option>
+					<option value="order by pending_posts desc">Pending posts high to low</option>
+					<option value="order by sold_posts">Sold posts low to high</option>
+					<option value="order by sold_posts desc">Sold posts high to low</option>
+					<option value="order by total_posts">Total posts low to high</option>
+					<option value="order by total_posts desc">Total posts high to low</option>
+				</select>
+				<input type="submit" class="btn btn-outline-success mb-3 mr-3" name="" value="Search">
+			</form>
+		<div class="form-row justify-content-center">
+			<table class="table table-striped table-bordered table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<td scope="col">ID </td>
+						<td scope="col">Username </td>
+						<td scope="col">Name </td>
+						<td scope="col">Type </td>
+						<td scope="col">Phone </td>
+						<td scope="col">Email </td>
+						<td scope="col">Active posts </td>
+						<td scope="col">Pending posts </td>
+						<td scope="col">Sold posts </td>
+						<td scope="col">Total posts </td>
+						<td scope="col">Action </td>
+					</tr>
+				</thead>
+			<% for(var i=0; i < userlist.length; i++){ %>
+				<tr>
+					<th scope="row"><%= userlist[i].customer_id %></th>
+					<td><a href="/home/user_detail/<%= userlist[i].username %>" class="btn btn-outline-info"><%= userlist[i].username %></a></td>
+					<td><%= userlist[i].name %></td>
+					<td><%= userlist[i].type %></td>
+					<td><%= userlist[i].phone %></td>
+					<td><%= userlist[i].email %></td>
+					<td> <a href="/home/user_active_posts/<%= userlist[i].username%>" class="btn btn-outline-primary"><%= userlist[i].active_posts %></a></td>
+					<td><a href="/home/user_pending_posts/<%= userlist[i].username%>" class="btn btn-outline-primary"><%= userlist[i].pending_posts %></a></td>
+					<td><a href="/home/user_sold_posts/<%= userlist[i].username%>" class="btn btn-outline-primary"><%= userlist[i].sold_posts %></a></td>
+					<td><a href="/home/user_total_posts/<%= userlist[i].username%>" class="btn btn-outline-primary"><%= userlist[i].total_posts %></a></td>
+					<td>
+						<a href="/home/edit/<%= userlist[i].customer_id %>" class="btn btn-outline-secondary">EDIT</a>
+						<a href="/home/delete/<%= userlist[i].customer_id %>" class="btn btn-outline-danger">DELETE</a> 
+					</td>
+				</tr>
+			<%  } %>
+			</table>
+	</div>
+</body>
+</html>

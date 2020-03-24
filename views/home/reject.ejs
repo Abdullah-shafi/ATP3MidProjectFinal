@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reject Message</title>
+	<link rel="stylesheet" type="text/css" href="abc/style.css">
+</head>
+<body>
+	<div>
+		<h1>Reject Property!</h1> 		
+	</div>
+     <br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<a href="/home/allproperty"> Back to property</a> |
+	<a href="/logout"> logout</a><br>
+
+	<form method="post">
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><%=property.username%></td>
+			</tr>
+			<tr>
+				<td>Id</td>
+				<td><%=property.property_id%></td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td><%=property.property_price%></td>
+			</tr>
+			<tr>
+				<td>Area</td>
+				<td><%=property.property_area%></td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td><%=property.p_type%></td>
+			</tr>
+			<tr>
+				<td>Style</td>
+				<td><%=property.style%></td>
+			</tr>
+			<tr>
+				<td>Bed</td>
+				<td><%=property.bed%></td>
+			</tr>
+			<tr>
+				<td>Bath</td>
+				<td><%=property.bath%></td>
+			</tr>
+			<tr>
+				<td>Feet</td>
+				<td><%=property.feet%></td>
+			</tr>
+			<tr>
+				<td>Title</td>
+				<td><%=property.title%></td>
+			</tr>
+			<tr>
+				<td>Floor</td>
+				<td><%=property.floor%></td>
+			</tr>
+			<tr>
+				<td>Description :</td>
+				<td><%=property.description%></td>
+			</tr>
+			<tr>
+				<td>Status :</td>
+				<td><%=property.status%></td>
+			</tr>
+			<tr>
+				<td>No_of_clicks :</td>
+				<td><%=property.no_of_clicks%></td>
+			</tr>
+			<tr>
+				<td>Date :</td>
+				<td><%=property.date%></td>
+			</tr>
+			<tr>
+				<td><h3>Are you sure? </h3></td>
+				<td><input type="submit" name="submit" value="confirm"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

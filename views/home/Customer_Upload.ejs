@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Property</title>
+<link rel="stylesheet" href="./abc/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AB</span> Property </h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="Customer_Home"><i class="fa fa-home"></i> Home</a></li>
+            <li ><a href="Customer_Profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="Customer_Feedback "><i class="fa fa-envelope"></i> Feedback</a></li>
+             <li class="current"><a href=" Customer_Upload"><i class="fa fa-upload"></i> Upload Property</a></li>
+            <li><a href="Customer_Edit "><i class="fa fa-edit"></i> Edit Property</a></li>
+            <li><a href="Customer_Delete"> <i class="fa fa-trash"></i> Delete Post</a></li>
+            <li><a href="/logout "> <i class="fa fa-sign-out"></i> LogOut</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+<body>
+
+
+<div class="Customer_Profile2">
+  
+  <img src="<%= profile[0].c_image %>" alt="Avatar" class="profile">
+
+  <br>
+     <br>
+     <br>
+
+    <center>
+
+           <input type="button" class="profile_button" onclick="window.location.href = 'Customer_Edit_Profile';" value="Edit_Profile"/><br>
+         <input type="button" class="profile_button" onclick="window.location.href = 'Change_Password';" value="Change_Password"/><br>
+        
+  </center>
+
+</div>
+
+
+<div class="profile_details">
+  
+    <h1 id="logo" align="center">Upload Property</h1><br>
+
+
+              <form action="/home/Customer_Upload" method="post" enctype="multipart/form-data">
+               <div >
+                  <center>
+
+          
+                  
+                   <input type="Text" id="details" name="title" placeholder="Title"><br>
+
+                 <input type="Text" id="details" name="place" placeholder="Place" required=""><br>
+                 <select id="detail" name="type">
+                   
+                   <option value="appartment">Appartment</option>
+                   <option value="room">Room</option>
+                   <option value="duplex">Duplex</option>
+                   <option value="bachelor">Bachelor</option>
+                </select>
+                <br>
+                <select id="detail" name="style">
+                  <option value="sell">Sell</option>
+                  <option value="rent">Rent</option>
+                </select>
+                <br>
+                 <input type="Number" id="details" name="price" placeholder="Price" min="0" required=""><br>
+                 <input type="Number" id="details" name="bed" placeholder="Bed" required=""><br>
+                 <input type="Number" id="details" name="bath" placeholder="Bath" required=""><br>
+                 <input type="Number" id="details" name="feet" placeholder="Sq.ft"><br>
+                  <input type="Number" id="details" name="floor" placeholder="Floor" required=""><br>
+                  <input type="Text" id="details" name="description" placeholder="Description"><br>
+
+
+                 <h4 align="center">Picture:<input type="file" name="image" id="fileToUpload" required=""></h4>
+                 
+                 <button type="submit">Upload</button><br>
+
+            
+         </center>
+
+      </div>
+     
+       </form>
+
+</div>
+
+
+
+
+</body>
+</html>

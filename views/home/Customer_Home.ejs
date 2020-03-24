@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="./abc/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AB</span> Property </h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href=""><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="Customer_Profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href=" Customer_Feedback"><i class="fa fa-envelope"></i> Feedback</a></li>
+            <li><a href=" Customer_Upload"><i class="fa fa-upload"></i> Upload Property</a></li>
+            <li><a href="Customer_Edit "><i class="fa fa-edit"></i> Edit Property</a></li>
+            <li><a href="Customer_Delete "> <i class="fa fa-trash"></i> Delete Post</a></li>
+            <li><a href="/logout "> <i class="fa fa-sign-out"></i> LogOut</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+
+
+
+
+<div class="option">
+    <form method="post">
+	<input type="text" name="title"  id="p" placeholder="Title">
+      <input type="text" name="location"  id="p" placeholder="Location">
+      <input type="number" name="bed"  id="p" placeholder="No. of Bed">
+      <input type="number" name="bath"  id="p"  placeholder="No. of Bath">   
+      <input type="number" name="floor"  id="p"  placeholder="Floor">
+      <input type="number" name="price_from" id="p"  placeholder="Price ">
+      
+      <select name="purpose"  id="p">
+        <option value="">Purpose</option>
+        <option value="rent">Rent</option>
+        <option value="sell">Sell</option>
+      </select>
+      <select name="type"  id="p">
+        <option value="">Type</option>
+        <option value="apartment">Apartment</option>
+        <option value="flat">Flat</option>
+        <option value="duplex">Duplex</option>
+        <option value="room">Room</option>
+        <option value="shop">Shop</option>
+        <option value="other">Other</option>
+      </select>
+      
+   <button type="submit" id="search"><i class="fa fa-search"></i></button>
+	
+</form>
+</div>
+
+<br>
+
+
+
+<!-- Pic & Price -->
+
+
+ <center>
+<section >
+    <% for(var i=0; i < propertylist.length; i++){ %>
+<div class="responsive" >
+            <div class="gallery">
+
+       
+        <form method="post" action="/home/Property_details/<%= propertylist[i].property_id %>">
+
+           <button style="border: 3px solid #ccc;border-radius: 4px;height: 90%;width: 100%;font-size: 14px;" name="ab" id="<%= propertylist[i].property_id %>" ><img src="<%= propertylist[i].image %>" >
+              Price: <%= propertylist[i].property_price %><br><br>
+              <%= propertylist[i].property_area %><br><br><%= propertylist[i].style %><br><br>
+              <i class="fa fa-bed"></i> <%= propertylist[i].bed %> 
+              <i class="fa fa-bath"> <%= propertylist[i].bath %></i> &#9949;<%= propertylist[i].feet %> sq. ft <br><br>
+
+            </button>
+          </form>
+            <br>  
+              
+            <br>
+            
+            </div>
+            </div> 
+
+  <% } %>         
+                    
+</section>
+
+  </center> 
+<br>
+
+
+
+ 
+
+
+<!-- Footer-->
+
+<footer>
+      <p> Copyright &copy; 2020-2030</p>
+</footer>
+
+</body>
+</html>

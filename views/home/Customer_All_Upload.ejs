@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Edit</title>
+<link rel="stylesheet" href="./abc/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AB</span> Property </h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="Customer_Home"><i class="fa fa-home"></i> Home</a></li>
+            <li ><a href=" Customer_Profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="Customer_Feedback "><i class="fa fa-envelope"></i> Feedback</a></li>
+             <li><a href=" Customer_Upload"><i class="fa fa-upload"></i> Upload Property</a></li>
+            <li class="current"><a href="Customer_Edit"><i class="fa fa-edit"></i> Edit Property</a></li>
+            <li><a href="Customer_Delete "> <i class="fa fa-trash"></i> Delete Post</a></li>
+            <li><a href="/logout "> <i class="fa fa-sign-out"></i> LogOut</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+<body>
+
+<div class="Customer_Profile">
+  
+  <img src="<%=propertylist[0].c_image%>" alt="Avatar" class="profile">
+
+  <br>
+     <br>
+     <br>
+
+    <center>
+
+           <input type="button" class="profile_button" onclick="window.location.href = 'Customer_Edit_Profile';" value="Edit_Profile"/><br>
+         <input type="button" class="profile_button" onclick="window.location.href = 'Change_Password';" value="Change_Password"/><br>
+       <input type="button" class="profile_button" onclick="window.location.href = 'Customer_All_Upload';" value="Uploaded_Property"/><br>
+  </center>
+
+</div>
+
+
+<div class="profile_details">
+  
+    <h1 id="logo" align="center">Edit/Sold/Rent</h1><br>
+
+    
+    <table >
+  <tr>
+    <th>Id</th>
+    <th >Type</th>
+    <th>Price</th>
+    <th>Active/Pending</th>
+  </tr>
+      <% for(var i=0; i < propertylist.length; i++){ %>
+        <tr><td><%=propertylist[i].property_id%></td>
+            <td><%=propertylist[i].p_type%></td>
+            <td><%=propertylist[i].property_price%></td>
+            <td><%=propertylist[i].status%></td>
+            
+        </tr>
+      <% } %> 
+
+</table>
+
+</div>
+
+</body>
+</html>

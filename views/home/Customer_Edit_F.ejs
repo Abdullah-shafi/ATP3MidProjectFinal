@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Edit</title>
+<link rel="stylesheet" href="/./abc/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AB</span> Property </h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/home/Customer_Home"><i class="fa fa-home"></i> Home</a></li>
+            <li ><a href="/home/Customer_Profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="/home/Customer_Feedback "><i class="fa fa-envelope"></i> Feedback</a></li>
+             <li ><a href=" /home/Customer_Upload"><i class="fa fa-upload"></i> Upload Property</a></li>
+            <li class="current"><a href="/home/Customer_Edit"><i class="fa fa-edit"></i> Edit Property</a></li>
+            <li><a href="/home/Customer_Delete"> <i class="fa fa-trash"></i> Delete Post</a></li>
+            <li><a href="/logout "> <i class="fa fa-sign-out"></i> LogOut</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+<body>
+
+
+<div class="Customer_Profile">
+  
+  <img src="<%=profile[0].c_image%>" alt="Avatar" class="profile">
+
+  <br>
+     <br>
+     <br>
+
+    <center>
+
+           <input type="button" class="profile_button" onclick="window.location.href = '/home/Customer_Edit_Profile';" value="Edit_Profile"/><br>
+         <input type="button" class="profile_button" onclick="window.location.href = '/home/Change_Password';" value="Change_Password"/><br>
+         
+  </center>
+
+</div>
+
+
+<div class="profile_details2">
+  
+
+    <h1 id="logo" align="center">Edit Property</h1><br>
+
+      <div >
+           <form method="post" >
+           <center>
+        
+                 Title:<input type="Text" id="details" name="title" value="<%=profile[0].title%>" placeholder="Name" ><br>
+
+                 Area:<input type="Text" id="details" name="place" value="<%=profile[0].property_area%>" placeholder="Place" required=""><br>
+                 Type:<select id="detail" name="type">
+                   
+                   <option value="appartment">Appartment</option>
+                   <option value="room">Room</option>
+                   <option value="duplex">Duplex</option>
+                   <option value="bachelor">Bachelor</option>
+                </select>
+                <br>
+                Style:<select id="detail" name="style">
+                  <option value="sell">Sell</option>
+                  <option value="rent">Rent</option>
+                </select>
+                <br>
+                Price: <input type="Number" id="details" name="price" value="<%=profile[0].property_price%>" placeholder="Price" min="0" required=""><br>
+                 Bed:<input type="Number" id="details" name="bed" value="<%=profile[0].bed%>" placeholder="Bed" required=""><br>
+                 Bath:<input type="Number" id="details" name="bath" value="<%=profile[0].bath%>" placeholder="Bath" required=""><br>
+                Feet: <input type="Number" id="details" name="feet" value="<%=profile[0].feet%>" placeholder="Sq.ft"><br>
+                  
+                  Floor:<input type="Number" id="details" name="floor"value="<%=profile[0].floor%>" placeholder="Floor" required=""><br>
+                 Details: <input type="Text" id="details" name="description" value="<%=profile[0].description%>" placeholder="Description"><br>
+                 
+                 <button type="submit">Upload</button><br>
+       
+            </center>
+ 
+   </form> 
+      </div>
+     
+   
+
+</div>
+
+
+
+
+</body>
+</html>
